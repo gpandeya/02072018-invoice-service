@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container, 
+	see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>CustomerCenterAPI</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.mckesson.mscs.cc</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerCenterAPI</servlet-name>
+		<url-pattern>/web-api/*</url-pattern>
+	</servlet-mapping>
+
+	<resource-ref>
+		<res-ref-name>Z_MSCS_ECC_JCO_NAMED</res-ref-name>
+		<res-type>javax.resource.cci.ConnectionFactory</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<resource-ref>
+		<res-ref-name>Z_MSCS_ECC_JCO_UNNAMED</res-ref-name>
+		<res-type>javax.resource.cci.ConnectionFactory</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<resource-ref>
+		<res-ref-name>Z_MSCS_ECC_JCO_BW</res-ref-name>
+		<res-type>javax.resource.cci.ConnectionFactory</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<!-- ECC DB Configuration -->
+	<resource-ref>
+		<res-ref-name>Z_MSCS_ECC_DB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<!-- WEBSTORE DB Donfiguration -->
+
+	<resource-ref>
+		<res-ref-name>Z_MSCS_WEBSTORE_DB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<resource-ref>
+		<res-ref-name>Z_MSCS_REPORTS_DB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Application</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+	<!-- Time Out handling 60 mins , would be handled from NWA -->
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+
+	<mime-mapping>
+		<extension>xls</extension>
+		<mime-type>application/xls</mime-type>
+	</mime-mapping>
+
+</web-app>
