@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <version>1.0</version>
   <name>api-customercenter</name>
-  <url>http://maven.apache.org</url>
+  <url>http://maven.apache.org</url> 
   <build>
         <finalName>api-customercenter</finalName>
         <plugins>
