@@ -60,7 +60,8 @@ public class AuditRequestFilter implements ContainerRequestFilter {
 			logBuffer.append("\n");
 		}
 		logBuffer.append("\n");
-
+		
+		
 		//ToDo:
 		// The below code is failing with error : 
 		//Caused by: java.lang.NoSuchMethodError: org.apache.commons.io.IOUtils.toString(Ljava/io/InputStream;Ljava/nio/charset/Charset;)Ljava/lang/String;
