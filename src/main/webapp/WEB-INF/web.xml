@@ -55,14 +55,14 @@
 		<res-auth>Application</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
-
+ <!--
 	<resource-ref>
 		<res-ref-name>Z_MSCS_REPORTS_DB</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Application</res-auth>
 		<res-sharing-scope>Shareable</res-sharing-scope>
 	</resource-ref>
-
+-->
 	<!-- Time Out handling 60 mins , would be handled from NWA -->
 	<session-config>
 		<session-timeout>60</session-timeout>
