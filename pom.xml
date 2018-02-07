@@ -5,10 +5,10 @@
   <artifactId>api-customercenter</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>api-customercenter</name>
+  <name>invoice-service</name>
   <url>http://maven.apache.org</url> 
   <build>
-        <finalName>api-customercenter</finalName>
+        <finalName>invoice-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
